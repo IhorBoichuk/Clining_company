@@ -6,7 +6,7 @@ from .models import Contact
 class ContactForm(ModelForm):
     class Meta:
         model = Contact
-        fields = ['name', 'phone', 'message']
+        fields = '__all__'
         widgets = {
             'name': TextInput(attrs={
                 'placeholder': 'Please enter your name.',
