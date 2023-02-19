@@ -132,3 +132,6 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+TELEGRAM_BOT_TOKEN = "ooo"
+TELEGRAM_CHAT_ID = 111

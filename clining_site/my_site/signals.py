@@ -1,19 +1,16 @@
-from django.shortcuts import redirect
 from django.dispatch import receiver
-from clining_site import settings
-from .models import Contact
-
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
-import asyncio
+from .models import Contact
 from .services import main
 
 
 @receiver(post_save)
 def post_save_contact(sender=Contact, **kwargs):
     my_obj = Contact.objects.last()
-    if my_obj.name:
-        print(my_obj.name)
-        asyncio.run(main())
+    context = {}
+    context['name'] = my_obj.name
+    context['contact_info'] = my_obj.phone
+    context['message'] = my_obj.message    
+    main(context)
 

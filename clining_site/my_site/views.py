@@ -7,14 +7,6 @@ from .forms import ContactForm
 from .models import Contact
 
 
-
-
-
-
-# from django.views.generic import DetailView
-# from django.shortcuts import render
-from django.http import HttpRequest, HttpResponseRedirect
-
 class IndexTemplateView(TemplateView):
     template_name = 'my_site/index.html'
     

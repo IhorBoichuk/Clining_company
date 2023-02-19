@@ -1,10 +1,21 @@
-import asyncio
-from pyrogram import Client
-
-api_id = 12345
-api_hash = "some hash"
+import requests
+from django.conf import settings
 
 
-async def main():
-    async with Client("my_account", api_id, api_hash) as app:
-        await app.send_message("me", "Greetings from **Pyrogram**!")
+TOKEN = settings.TELEGRAM_BOT_TOKEN
+chat_id = settings.TELEGRAM_CHAT_ID
+
+   
+def main(message):
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message}"
+
+    return (requests.get(url).json()) # this sends the message to chanel
+
+
+
+
+
+
+
+        
+    
