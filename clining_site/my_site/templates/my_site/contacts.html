@@ -1,15 +1,23 @@
 {% extends 'my_site/base.html' %}
 
 
-{% block contacts %}
-        <div class="content">
-            <h3>CONTACT US</h3>
-            <p>Please fill this form</p>
-            <form method='post'>{% csrf_token %}
-                <p>{{form.name}}<br>{{form.phone}}<br>{{form.message}}<br></p>
-                <button type='submit' class='btn btn-success'>Comment</button>
-            </form>
-        </div> 
-        <div class="fusion-column content-box-column content-box-column content-box-column-2 col-lg-4 col-md-4 col-sm-4 fusion-content-box-hover "><div class="col content-box-wrapper content-wrapper link-area-link-icon icon-hover-animation-pulsate" style="background-color:rgba(255,255,255,0);" data-animationoffset="top-into-view"><div class="heading heading-with-icon icon-left"><div aria-hidden="true" class="image"><img alt="call" data-lazy-src="https://cdn-aocek.nitrocdn.com/dffuxYnpjbQhWJlxGMQpppcdFFsajPjf/assets/images/optimized/rev-91804a8/wp-content/uploads/call.png" nitro-lazy-src="https://cdn-aocek.nitrocdn.com/dffuxYnpjbQhWJlxGMQpppcdFFsajPjf/assets/images/optimized/rev-91804a8/wp-content/uploads/call.png" class="lazyload lazyloaded" decoding="async" nitro-lazy-empty="" id="Mzc4OjgyNQ==-1" src="https://cdn-aocek.nitrocdn.com/dffuxYnpjbQhWJlxGMQpppcdFFsajPjf/assets/images/optimized/rev-91804a8/wp-content/uploads/call.png" width="130" height="151.67"></div><h4 class="content-box-heading fusion-responsive-typography-calculated" style="font-size:16px;--fontSize:16;line-height:1.5;">Phone</h4></div><div class="fusion-clearfix"></div><div class="content-container" style="color:#333;"> <p>+1(215)359-5790</p> </div></div></div>
-        <div class="col content-box-wrapper content-wrapper link-area-link-icon icon-hover-animation-pulsate" style="background-color:rgba(255,255,255,0);" data-animationoffset="top-into-view"><div class="heading heading-with-icon icon-left"><div aria-hidden="true" class="image"><img alt="email" data-lazy-src="https://cdn-aocek.nitrocdn.com/dffuxYnpjbQhWJlxGMQpppcdFFsajPjf/assets/images/optimized/rev-91804a8/wp-content/uploads/mail.png" nitro-lazy-src="https://cdn-aocek.nitrocdn.com/dffuxYnpjbQhWJlxGMQpppcdFFsajPjf/assets/images/optimized/rev-91804a8/wp-content/uploads/mail.png" class="lazyload lazyloaded" decoding="async" nitro-lazy-empty="" id="MzgwOjg4MA==-1" src="https://cdn-aocek.nitrocdn.com/dffuxYnpjbQhWJlxGMQpppcdFFsajPjf/assets/images/optimized/rev-91804a8/wp-content/uploads/mail.png" width="130" height="151.67"></div><h4 class="content-box-heading fusion-responsive-typography-calculated" style="font-size:16px;--fontSize:16;line-height:1.5;">Email</h4></div><div class="fusion-clearfix"></div><div class="content-container" style="color:#333;"> <p>boychulilia@gmail.com</p> </div></div>   
-{% endblock contacts %}
+{% block cont %}
+    <form method='post' class="contacts__form">{% csrf_token %}
+        <div class="contacts__form-title">CONTACT US</div>
+        <div class="contacts__form-subtitle"><span>&#42;</span> Please fill this form</div>
+
+        <div class="form__item">
+            {{form.name}}
+        </div>
+        <div class="form__item">
+            {{form.phone}}
+        </div>
+        <div class="form__item">
+            {{form.message}}
+        </div>
+        <div class="form__item">
+            <button type="submit" class="form__button">Send Message</button>
+        </div>
+    </form>
+        
+{% endblock cont %}

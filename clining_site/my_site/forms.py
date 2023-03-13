@@ -10,18 +10,19 @@ class ContactForm(ModelForm):
         widgets = {
             'name': TextInput(attrs={
                 'placeholder': 'Please enter your name.',
-                'size':50
+                'class': 'form__input',
+                
                 }),
             
-            'phone': Textarea(attrs={
+            'phone': TextInput(attrs={
                 'placeholder': 'Here you can leave your phone number/contact',
-                'rows':2,
-                'cols':61,
+                'class': 'form__input',
+                
                 }),
             
             'message': Textarea(attrs={
                 'placeholder': 'Here you can leave your message, thank you.',
-                'rows':14,
-                'cols':61,
+                'class': 'form__input',
+                
                 })
         }

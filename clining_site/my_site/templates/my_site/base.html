@@ -1,32 +1,141 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'my_site/style.css' %}">
-    <title>Home Cleaning</title>
+	<title>Cleaning</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="{% static 'my_site/css/style.css' %}">
+	<link rel="shortcut icon" href="{% static 'my_site/favicon.ico' %}">
+	
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    <div class="blur">
-        <nav>
-            <ul>
-                <li><a href={% url 'home' %}>Home</a></li>
-                <li><a href={% url 'service' %}>Service</a></li>
-                <li><a href={% url 'contacts' %}>Contacts</a></li>
-            </ul>
-        </nav>
+	<div data-fp class="wrapper">
+		<header data-scroll="100" class="header">
+			<div class="header__container">
+				<a href="" class="header__logo"><img src="{% static 'my_site/img/logo.svg' %}" alt="Site logo"></a>
+				<div class="header__menu menu">
 
-        <div class="content">
-            {% block contacts %}{% endblock contacts %}
-            {% block home %}{% endblock home %}
-            {% block serv %}{% endblock serv %}
-        </div>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="#" data-goto=".info" class="menu__link ">Home</a></li>
+							<li class="menu__item"><a href="#" data-goto=".service" class="menu__link">Service</a></li>
+							<li class="menu__item"><a href="#" data-goto=".page__bottom" class="menu__link">Contacts</a></li>
 
-        <footer>
-            Written by ranoke
-        </footer>
-    </div>
+						</ul>
+					</nav>
+
+				</div>
+				<button type="button" class="menu__icon icon-menu"><span></span></button>
+			</div>
+		</header>
+		<main class="page">
+			<section data-fp-section class="info">
+				<div class="info__container">
+					<div class="info__map">
+						<picture><source srcset="{% static 'my_site/img/map.webp' %}" type="image/webp"><img src="{% static 'my_site/img/map.png' %}" alt="Philadelphia"></picture>
+					</div>
+					<div class="info__content">
+						<h1 class="info__title">CLEANING SERVICES IN PHILADELPHIA</h1>
+						<div class="info__text">Always there for existent and new customers, we are ready to answer even
+							short notice calls, we will make sure to take your booking or any kind of emergencies. Our
+							company can organise and send cleaners to deal with an end of tenancy cleaning, carpet
+							cleaning, domestic cleaning or office cleaning.</div>
+					</div>
+				</div>
+			</section>
+			<section data-fp-section class="service">
+				<div class="service__container">
+					<div class="service__item">
+						<div class="service__item-img"><img src="{% static 'my_site/img/service/01.svg' %}" alt="img"></div>
+						<div class="service__item-title">
+							Cleaning services
+						</div>
+						<div class="service__item-sabtitle">
+							Most advanced and professional cleaning.
+						</div>
+					</div>
+					<div class="service__item">
+						<div class="service__item-img"><img src="{% static 'my_site/img/service/02.svg' %}" alt="img"></div>
+						<div class="service__item-title">
+							Housekeepers
+						</div>
+						<div class="service__item-sabtitle">
+							Friendly maid services for pristine home.
+						</div>
+					</div>
+					<div class="service__item">
+						<div class="service__item-img"><img src="{% static 'my_site/img/service/03.svg' %}" alt="img"></div>
+						<div class="service__item-title">
+							Office cleaning
+						</div>
+						<div class="service__item-sabtitle">
+							Daily or weekly office cleaners for your business.
+						</div>
+					</div>
+					<div class="service__item">
+						<div class="service__item-img"><img src="{% static 'my_site/img/service/04.svg' %}" alt="img"></div>
+						<div class="service__item-title">
+							Commercial Contract Cleaning
+						</div>
+						<div class="service__item-sabtitle">
+							All year around get an amazing deal up to <span>10% discount.</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+		</main>
+
+		<div data-fp-section class="page__bottom">
+			<section class="contacts">
+				<div class="contacts__container">
+
+					{% block cont %}
+					{% endblock cont %}
+					
+					<div class="contacts__body">
+						<ul class="contacts__list">
+							<li class="contacts__list-item">
+								<div class="item__icon">
+									<img src="{% static 'my_site/img/contacts/phone.svg' %}" alt="img">
+								</div>
+								<div class="item__information">
+									<div class="information__title">Phone</div>
+									<a href="tel:+12153595790" class="information__sabtitle">+1(215)359-5790</a>
+								</div>
+							</li>
+							<li class="contacts__list-item">
+								<div class="item__icon">
+									<img src="{% static 'my_site/img/contacts/mail.svg' %}" alt="img">
+								</div>
+								<div class="item__information">
+									<div class="information__title">E-mail</div>
+									<a href="mailto:boychulilia@gmail.com" class="information__sabtitle">boychulilia@gmail.com</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</section>
+			<footer class="footer">
+				<div class="footer__container">
+					<div class="footer__copy">
+						&#169;&#32;Written by ranoke&#32;<span class="footer__year">2023</span>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<script src="{% static 'my_site/js/my_site.js' %}"></script>
 </body>
+
 </html>

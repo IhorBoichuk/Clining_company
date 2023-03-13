@@ -7,14 +7,6 @@ from .forms import ContactForm
 from .models import Contact
 
 
-class IndexTemplateView(TemplateView):
-    template_name = 'my_site/index.html'
-    
-
-class ServiceTemplateView(TemplateView):
-    template_name = 'my_site/service.html'
-    
-
 class ContactCreateView(CreateView):
     model = Contact
     form_class = ContactForm
